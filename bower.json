@@ -1,0 +1,20 @@
+{
+  "name": "myprofile",
+  "authors": [
+    "anishgeorgehb@gmail.com"
+  ],
+  "description": "The code for my own site",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "http://anishgeorge.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
