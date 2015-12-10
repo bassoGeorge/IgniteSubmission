@@ -4,15 +4,26 @@ html(ng-app='app')
     meta(charset='utf-8')
     link(href='css/style.css' rel='stylesheet')
     script(src='js/completeApp.min.js')
+    // We are only using One stylesheet and one Javascript file,
+    // both are built using gulp and imports all the required libraries
 
   body
     .grid-frame.vertical(ng-controller='TitleCtrl')
+
+      // Title
       nav.secondary.title-bar
         .center.title IMDB Web app
         span.left(ng-show='showBackButton()')
           a(ui-sref='home') Back
+
+      // Main view, split into two to keep one sticky
       main.grid-block(id='main' ui-view='home' ng-show="checkState('home')")
+
+        // This one is only shown in mobile views
       ui-view(ng-show="checkState('details')")
+
+
+      // Footer
       footer.grid-block.shrink
         .grid-content
           p.text-center built by&nbsp

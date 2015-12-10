@@ -1,16 +1,16 @@
+# Handles the movie details view
 angular.module('app.controllers')
 .controller('DetailsCtrl', [
     '$scope', '$stateParams', '$http',
     ($scope, $stateParams, $http) ->
-      console.log "Got state params: #{JSON.stringify($stateParams)}"
 
-      NProgress.start()
+      NProgress.start()     # Get the complete details
       $http.get("http://www.omdbapi.com", {
         params:
           i: $stateParams.code
       }).success(
         (data) ->
-          $scope.data = data
+          $scope.data = data    # Store it here for the view to access
           NProgress.done()
       )
   ])

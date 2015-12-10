@@ -1,26 +1,23 @@
 .grid-block.small-12.medium-5.large-4.vertical(ng-controller='ListCtrl')
+
+  // Search Area
   form.grid-content.shrink
     label Search
       span.inline-label
         input(type='search' placeholder='Search for title' ng-model='data.searchText')
         button(type='submit' ng-click='search()').button Search
+
+  // Result list area
   .grid-content
     section.block-list
       header(ng-show='results.length') Results
       li(ng-repeat='movie in results')
+        // The actual details view is determined based on current screen width
         a(ng-click='goToDetails(movie.imdbID)')
           small {{ movie.Year }}
           p {{ movie.Title }}
       header(ng-show='error') No results
 
+// Details view for medium and up devices
 .grid-block.medium-7.large-8.hide-for-small-only
   ui-view(name='sub')
-//
-  section.grid-content.small-12.medium-4(ng-controller='ListCtrl')
-    ul.block-list
-      li
-        label Search
-          span.inline-label
-            input(type='search' placeholder='Search for title' ng-model='data.searchText')
-            a(ng-click='search()').button Search
-//ui-view.medium-8.hide-for-small-only(name='sub')
