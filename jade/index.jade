@@ -7,6 +7,8 @@ html(ng-app='app')
 
   body
     .grid-frame.vertical
-      nav.primary.title-bar
+      nav.primary.title-bar(ng-controller='TitleCtrl')
         .center.title IMDB Web app
+        span.left(ng-show='showBackButton()')
+          a(ui-sref='home') Back
       main.grid-block(ui-view)

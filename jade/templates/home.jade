@@ -1,4 +1,11 @@
-section.grid-content.small-12.medium-4
+section.grid-content.small-12.medium-4(ng-controller='ListCtrl')
   ul.block-list
-    li blah
-    li blah2
+    li
+      p blah
+    li
+      p blah2
+    li
+      button.button.success(ng-click='goToDetails()') Go go go
+    li
+      button.button.secondary(ng-click='checkMedia()') check
+ui-view.medium-8.hide-for-small-only(name='sub')
