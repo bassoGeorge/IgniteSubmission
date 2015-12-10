@@ -3,11 +3,11 @@ angular.module('app.controllers')
   ['$scope', 'FoundationMQ', '$state', '$http',
     ($scope, FoundationMQ, $state, $http) ->
 
-      $scope.goToDetails = (obj) ->
+      $scope.goToDetails = (code) ->
         if FoundationMQ.matchesMediaOnly("small")
-          $state.go("details", { movie: obj })
+          $state.go("details", { code: code })
         else
-          $state.go("home.details", { movie: obj })
+          $state.go("home.details", { code: code })
 
       $scope.data =
         searchText: ''
@@ -18,8 +18,6 @@ angular.module('app.controllers')
             s: $scope.data.searchText
         }).success(
           (data) ->
-            if data.Search
-              $scope.results = data.Search
-            console.log "Got result #{JSON.stringify($scope.results[0])}"
+            $scope.results = data.Search
         )
 ])

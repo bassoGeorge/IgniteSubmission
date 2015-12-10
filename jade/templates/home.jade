@@ -5,9 +5,12 @@
         input(type='search' placeholder='Search for title' ng-model='data.searchText')
         a(ng-click='search()').button Search
   .grid-content
-    ui.block-list
+    section.block-list
+      header(ng-show='results.length') Results
       li(ng-repeat='movie in results')
-        p {{ movie.Title }}
+        a(ng-click='goToDetails(movie.imdbID)')
+          small {{ movie.Year }}
+          p {{ movie.Title }}
 
 .grid-block.medium-8.hide-for-small-only
   ui-view(name='sub')
