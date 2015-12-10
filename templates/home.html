@@ -1,0 +1,24 @@
+
+<div ng-controller="ListCtrl" class="grid-block small-12 medium-5 large-4 vertical">
+  <!-- Search Area-->
+  <form class="grid-content shrink">
+    <label>Search<span class="inline-label">
+        <input type="search" placeholder="Search for title" ng-model="data.searchText"/>
+        <button type="submit" ng-click="search()" class="button">Search</button></span></label>
+  </form>
+  <!-- Result list area-->
+  <div class="grid-content">
+    <section class="block-list">
+      <header ng-show="results.length">Results</header>
+      <li ng-repeat="movie in results">
+        <!-- The actual details view is determined based on current screen width--><a ng-click="goToDetails(movie.imdbID)"><small>{{ movie.Year }}</small>
+          <p>{{ movie.Title }}</p></a>
+      </li>
+      <header ng-show="error">No results</header>
+    </section>
+  </div>
+</div>
+<!-- Details view for medium and up devices-->
+<div class="grid-block medium-7 large-8 hide-for-small-only">
+  <ui-view name="sub"></ui-view>
+</div>

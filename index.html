@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/completeApp.min.js"></script>
+    <!-- We are only using One stylesheet and one Javascript file,-->
+    <!-- both are built using gulp and imports all the required libraries-->
+  </head>
+  <body>
+    <div ng-controller="TitleCtrl" class="grid-frame vertical">
+      <!-- Title-->
+      <nav class="secondary title-bar">
+        <div class="center title">IMDB Web app</div><span ng-show="showBackButton()" class="left"><a ui-sref="home">Back</a></span>
+      </nav>
+      <!-- Main view, split into two to keep one sticky-->
+      <main id="main" ui-view="home" ng-show="checkState('home')" class="grid-block">
+        <!-- This one is only shown in mobile views-->
+      </main>
+      <ui-view ng-show="checkState('details')"></ui-view>
+      <!-- Footer-->
+      <footer class="grid-block shrink">
+        <div class="grid-content">
+          <p class="text-center">built by&nbsp<a href="https://github.com/bassoGeorge" target="_blank">Anish George</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

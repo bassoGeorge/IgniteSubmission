@@ -1,0 +1,22 @@
+
+<!-- The complete details of the movie-->
+<section class="grid-content">
+  <div ng-if="data.Title" class="card">
+    <div class="card-section">
+      <h2>{{ data.Title }}</h2><span ng-class="data.Type == &quot;movie&quot;? &quot;success&quot; : &quot;warning&quot;" class="movie-type label">{{ data.Type }}</span>
+      <h4 ng-if="data.Released != &quot;N/A&quot;">{{ data.Released }}</h4>
+    </div>
+    <div ng-if="data.Plot != &quot;N/A&quot;">
+      <div class="card-divider">Plot</div>
+      <div class="card-section">
+        <p>{{ data.Plot }}</p>
+      </div>
+    </div>
+    <div ng-if="data.Actors != &quot;N/A&quot;">
+      <div class="card-divider">Cast</div>
+      <div class="card-section">
+        <p>{{ data.Actors }}</p>
+      </div>
+    </div>
+  </div>
+</section>
