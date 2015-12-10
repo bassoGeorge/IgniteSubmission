@@ -1,2 +1,14 @@
 section.grid-content
-  h3 This is the details pane
+  .card(ng-if='data.Title')
+    .card-section
+      h2 {{ data.Title }}
+      h4(ng-if='data.Released != "N/A"') {{ data.Released }}
+    div(ng-if='data.Plot != "N/A"')
+      .card-divider Plot
+      .card-section
+        p {{ data.Plot }}
+    div(ng-if='data.Actors != "N/A"')
+      .card-divider Cast
+      .card-section
+        p {{ data.Actors }}
+
