@@ -4,11 +4,13 @@ angular.module('app.controllers')
     ($scope, $stateParams, $http) ->
       console.log "Got state params: #{JSON.stringify($stateParams)}"
 
+      NProgress.start()
       $http.get("http://www.omdbapi.com", {
         params:
           i: $stateParams.code
       }).success(
         (data) ->
           $scope.data = data
+          NProgress.done()
       )
   ])

@@ -1,9 +1,9 @@
 .grid-block.small-12.medium-4.vertical(ng-controller='ListCtrl')
-  .grid-content.shrink
+  form.grid-content.shrink
     label Search
       span.inline-label
         input(type='search' placeholder='Search for title' ng-model='data.searchText')
-        a(ng-click='search()').button Search
+        button(type='submit' ng-click='search()').button Search
   .grid-content
     section.block-list
       header(ng-show='results.length') Results

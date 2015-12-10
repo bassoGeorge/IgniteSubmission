@@ -13,11 +13,13 @@ angular.module('app.controllers')
         searchText: ''
 
       $scope.search = () ->
+        NProgress.start()
         $http.get("http://www.omdbapi.com", {
           params:
             s: $scope.data.searchText
         }).success(
           (data) ->
             $scope.results = data.Search
+            NProgress.done()
         )
 ])

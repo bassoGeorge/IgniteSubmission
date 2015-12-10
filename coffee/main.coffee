@@ -34,3 +34,8 @@ angular.module('app', [
 
 # Just setting up required modules so that the DI doesn't complain on concatenation of files
 angular.module('app.controllers', [])
+
+NProgress.configure({
+  showSpinner: false
+  parent: "#main"
+})
