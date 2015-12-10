@@ -1,4 +1,4 @@
-.grid-block.small-12.medium-4.vertical(ng-controller='ListCtrl')
+.grid-block.small-12.medium-5.large-4.vertical(ng-controller='ListCtrl')
   form.grid-content.shrink
     label Search
       span.inline-label
@@ -13,7 +13,7 @@
           p {{ movie.Title }}
       header(ng-show='error') No results
 
-.grid-block.medium-8.hide-for-small-only
+.grid-block.medium-7.large-8.hide-for-small-only
   ui-view(name='sub')
 //
   section.grid-content.small-12.medium-4(ng-controller='ListCtrl')
