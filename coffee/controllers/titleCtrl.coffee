@@ -4,4 +4,6 @@ angular.module('app.controllers')
     ($scope, $state) ->
       $scope.showBackButton = () ->
         $state.is("details")
+      $scope.checkState = (state) ->
+        $state.includes(state)
   ])

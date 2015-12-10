@@ -23,7 +23,9 @@ var paths = {
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-animate/angular-animate.js',
     'bower_components/foundation-apps/dist/js/foundation-apps.js',
-    'bower_components/nprogress/nprogress.js'
+    'bower_components/nprogress/nprogress.js',
+    'bower_components/ui-router-extras/release/modular/ct-ui-router-extras.core.js',
+    'bower_components/ui-router-extras/release/modular/ct-ui-router-extras.sticky.js'
   ]  // Add all your library files  to this list, will be prepended to your final js file
 };
 

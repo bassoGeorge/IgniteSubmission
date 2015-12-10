@@ -1,5 +1,5 @@
 angular.module('app', [
-  'ui.router', 'ngAnimate', 'foundation',
+  'ui.router', 'ngAnimate', 'foundation', 'ct.ui.router.extras.sticky',
   'foundation.mediaquery',
   'app.controllers'])
 .config([ '$urlRouterProvider', '$stateProvider',
@@ -10,7 +10,10 @@ angular.module('app', [
     $stateProvider
     .state('home',
       url: '/home'
-      templateUrl: 'templates/home.html'
+      sticky: true
+      views:
+        home:
+          templateUrl: 'templates/home.html'
     )
     .state('details',
       params:

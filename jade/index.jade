@@ -6,9 +6,10 @@ html(ng-app='app')
     script(src='js/completeApp.min.js')
 
   body
-    .grid-frame.vertical
-      nav.primary.title-bar(ng-controller='TitleCtrl')
+    .grid-frame.vertical(ng-controller='TitleCtrl')
+      nav.primary.title-bar
         .center.title IMDB Web app
         span.left(ng-show='showBackButton()')
           a(ui-sref='home') Back
-      main.grid-block(id='main' ui-view)
+      main.grid-block(id='main' ui-view='home' ng-show="checkState('home')")
+      ui-view(ng-show="checkState('details')")
