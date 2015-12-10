@@ -20,6 +20,10 @@ angular.module('app.controllers')
         }).success(
           (data) ->
             $scope.results = data.Search
+            if not data.Search or $scope.results.length == 0
+              $scope.error = true
+            else
+              $scope.error = false
             NProgress.done()
         )
 ])

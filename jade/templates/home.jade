@@ -11,6 +11,7 @@
         a(ng-click='goToDetails(movie.imdbID)')
           small {{ movie.Year }}
           p {{ movie.Title }}
+      header(ng-show='error') No results
 
 .grid-block.medium-8.hide-for-small-only
   ui-view(name='sub')
