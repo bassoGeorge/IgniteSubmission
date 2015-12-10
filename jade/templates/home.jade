@@ -1,11 +1,22 @@
-section.grid-content.small-12.medium-4(ng-controller='ListCtrl')
-  ul.block-list
-    li
-      p blah
-    li
-      p blah2
-    li
-      button.button.success(ng-click='goToDetails()') Go go go
-    li
-      button.button.secondary(ng-click='checkMedia()') check
-ui-view.medium-8.hide-for-small-only(name='sub')
+.grid-block.small-12.medium-4.vertical(ng-controller='ListCtrl')
+  .grid-content.shrink.search-section
+    label Search
+      span.inline-label
+        input(type='search' placeholder='Search for title' ng-model='data.searchText')
+        a(ng-click='search()').button Search
+  .grid-content
+    ui.block-list
+      li(ng-repeat='movie in results')
+        p {{ movie.Title }}
+
+.grid-block.medium-8.hide-for-small-only
+  ui-view(name='sub')
+//
+  section.grid-content.small-12.medium-4(ng-controller='ListCtrl')
+    ul.block-list
+      li
+        label Search
+          span.inline-label
+            input(type='search' placeholder='Search for title' ng-model='data.searchText')
+            a(ng-click='search()').button Search
+//ui-view.medium-8.hide-for-small-only(name='sub')

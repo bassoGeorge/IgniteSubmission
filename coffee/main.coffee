@@ -13,11 +13,17 @@ angular.module('app', [
       templateUrl: 'templates/home.html'
     )
     .state('details',
+      params:
+        movie:
+          value: null
       url: '/details'
       templateUrl: 'templates/details.html'
     )
     .state('home.details',
       url: '/details'
+      params:
+        movie:
+          value: null
       views:
         sub:
           templateUrl: 'templates/details.html'
