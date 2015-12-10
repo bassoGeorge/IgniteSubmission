@@ -18,7 +18,11 @@ var paths = {
   coffee: ['./coffee/main.coffee', './coffee/**/*.coffee'],
   jade: ['./jade/**/*.jade'],
   
-  lib_js: []  // Add all your library files  to this list, will be prepended to your final js file
+  lib_js: [
+    'bower_components/angular/angular.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/foundation-apps/dist/foundation-apps.js'
+  ]  // Add all your library files  to this list, will be prepended to your final js file
 };
 
 gulp.task('default', ['sass', 'jade', 'coffee:final']);
