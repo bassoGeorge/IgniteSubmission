@@ -25,12 +25,12 @@ app.post('/setimage', function (req, res) {
     new: true,
     imageUrl: imageUrl
   };
-  if (imageArray.indexOf(id) == -1) {
+  if (imageArray.indexOf(id) == -1) {     // We do not have the image with us
     request(req.body['Poster']).pipe(fs.createWriteStream("images/posters/" + id)).on('close', function () {
       imageArray.push(id);
       res.json(result)
     });
-  } else {
+  } else {                                // We already have the image with us
     result['new'] = false;
     res.json(result)
   }
