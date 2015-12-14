@@ -19,13 +19,14 @@ angular.module('app.controllers')
 
           # The following procedure is required as we cannot hotlink imdb urls to our web app
           # The server will register our url and serve the images for use
-          $http.post(baseUrl + "setimage", {
-            imdbID: data.imdbID
-            Poster: data.Poster
-          }).success((d) ->
-            if d.success
-              $scope.data.imageUrl = baseUrl + d.imageUrl   # This will be rendered by the view
-          )
+          if data.Poster
+            $http.post(baseUrl + "setimage", {
+              imdbID: data.imdbID
+              Poster: data.Poster
+            }).success((d) ->
+              if d.success
+                $scope.data.imageUrl = baseUrl + d.imageUrl   # This will be rendered by the view
+            )
       )
 
   ])

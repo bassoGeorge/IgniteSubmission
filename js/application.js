@@ -61,14 +61,16 @@
       }).success(function(data) {
         $scope.data = data;
         NProgress.done();
-        return $http.post(baseUrl + "setimage", {
-          imdbID: data.imdbID,
-          Poster: data.Poster
-        }).success(function(d) {
-          if (d.success) {
-            return $scope.data.imageUrl = baseUrl + d.imageUrl;
-          }
-        });
+        if (data.Poster) {
+          return $http.post(baseUrl + "setimage", {
+            imdbID: data.imdbID,
+            Poster: data.Poster
+          }).success(function(d) {
+            if (d.success) {
+              return $scope.data.imageUrl = baseUrl + d.imageUrl;
+            }
+          });
+        }
       });
     }
   ]);
