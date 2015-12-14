@@ -4,8 +4,8 @@
   <div ng-if="data.Title" class="card">
     <div class="card-section">
       <h2>{{ data.Title }}</h2><span ng-class="data.Type == &quot;movie&quot;? &quot;success&quot; : &quot;warning&quot;" class="movie-type label">{{ data.Type }}</span>
-      <h4 ng-if="data.Released != &quot;N/A&quot;">{{ data.Released }}</h4><img ng-src="{{data.imageUrl}}" alt="Movie Poster"/>
-    </div>
+      <h4 ng-if="data.Released != &quot;N/A&quot;">{{ data.Released }}</h4>
+    </div><img ng-src="{{data.imageUrl}}" alt="Movie Poster"/>
     <div ng-if="data.Plot != &quot;N/A&quot;">
       <div class="card-divider">Plot</div>
       <div class="card-section">
