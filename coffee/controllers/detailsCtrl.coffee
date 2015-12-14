@@ -1,8 +1,10 @@
 # Handles the movie details view
 angular.module('app.controllers')
 .controller('DetailsCtrl', [
-    '$scope', '$stateParams', '$http', '$location',
-    ($scope, $stateParams, $http, $location) ->
+    '$scope', '$stateParams', '$http', '$location', '$state',
+    ($scope, $stateParams, $http, $location, $state) ->
+      if not $stateParams.code
+        $state.go "home"
 
       baseUrl = "#{$location.protocol()}://#{$location.host()}:#{$location.port()}/"
 

@@ -21,7 +21,7 @@ angular.module('app', [
         code:
           value: null
       url: '/details'
-      templateUrl: 'templates/details.html'
+      templateUrl: 'templates/detailsPhone.html'
       controller: 'DetailsCtrl'
     )
     .state('home.details',    # Details view for larger ones, as a main section on the same single page
@@ -31,7 +31,7 @@ angular.module('app', [
           value: null
       views:
         sub:
-          templateUrl: 'templates/details.html'
+          templateUrl: 'templates/detailsDesk.html'
           controller: 'DetailsCtrl'
     )
 ])

@@ -1,7 +1,7 @@
 
-<!-- The complete details of the movie-->
-<section class="grid-content">
-  <div ng-if="data.Title" class="card">
+<!-- Details view for phones and small devices-->
+<section ng-if="data.Title" class="grid-content">
+  <div class="card">
     <div class="card-section">
       <h2>{{ data.Title }}</h2><span ng-class="data.Type == &quot;movie&quot;? &quot;success&quot; : &quot;warning&quot;" class="movie-type label">{{ data.Type }}</span>
       <h4 ng-if="data.Released != &quot;N/A&quot;">{{ data.Released }}</h4>

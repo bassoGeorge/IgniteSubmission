@@ -1,0 +1,18 @@
+
+<!-- Details view for desktop and tablets-->
+<section ng-if="data.Title" class="grid-block wrap">
+  <div class="grid-content medium-12 large-5 large-order-2"><img ng-src="{{data.imageUrl}}" alt="Movie Poster"/></div>
+  <div class="grid-content medium-12 large-7 large-order-1">
+    <h2>{{ data.Title }}</h2><span ng-class="data.Type == &quot;movie&quot;? &quot;success&quot; : &quot;warning&quot;" class="movie-type label">{{ data.Type }}</span>
+    <h4 ng-if="data.Released != &quot;N/A&quot;">{{ data.Released }}</h4>
+    <hr/>
+    <div ng-if="data.Plot != &quot;N/A&quot;">
+      <h3>Plot</h3>
+      <p>{{ data.Plot }}</p>
+    </div>
+    <div ng-if="data.Actors != &quot;N/A&quot;">
+      <h3>Cast</h3>
+      <p>{{ data.Actors }}</p>
+    </div>
+  </div>
+</section>

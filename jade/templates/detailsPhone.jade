@@ -1,6 +1,6 @@
-// The complete details of the movie
-section.grid-content
-  .card(ng-if='data.Title')
+// Details view for phones and small devices
+section.grid-content(ng-if='data.Title')
+  .card
     .card-section
       h2 {{ data.Title }}
       span.movie-type.label(ng-class='data.Type == "movie"? "success" : "warning"') {{ data.Type }}
@@ -14,4 +14,3 @@ section.grid-content
       .card-divider Cast
       .card-section
         p {{ data.Actors }}
-

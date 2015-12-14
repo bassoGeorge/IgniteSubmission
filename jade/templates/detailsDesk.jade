@@ -1,0 +1,16 @@
+// Details view for desktop and tablets
+
+section.grid-block.wrap(ng-if='data.Title')
+  .grid-content.medium-12.large-5.large-order-2
+    img(ng-src='{{data.imageUrl}}' alt='Movie Poster')
+  .grid-content.medium-12.large-7.large-order-1
+    h2 {{ data.Title }}
+    span.movie-type.label(ng-class='data.Type == "movie"? "success" : "warning"') {{ data.Type }}
+    h4(ng-if='data.Released != "N/A"') {{ data.Released }}
+    hr
+    div(ng-if='data.Plot != "N/A"')
+      h3 Plot
+      p {{ data.Plot }}
+    div(ng-if='data.Actors != "N/A"')
+      h3 Cast
+      p {{ data.Actors }}

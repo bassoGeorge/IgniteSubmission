@@ -1,3 +1,6 @@
+/*
+The application server, runs on port 8080 by default
+ */
 var fs = require('fs');
 var express = require('express');
 var app = express();
@@ -10,6 +13,10 @@ app.use(express.static('.'));
 /* --------- Images --------------------- */
 var imageArray = fs.readdirSync("images/posters");
 
+/**
+ * Post function to notify the server of poster image requirement,
+ * if the image is unavailable, will be downloaded. The images reside in images/posters
+ */
 app.post('/setimage', function (req, res) {
   var id = req.body['imdbID'] + ".jpg";
   var imageUrl = "images/posters/"+id

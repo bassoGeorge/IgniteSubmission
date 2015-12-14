@@ -17,7 +17,7 @@
           }
         },
         url: '/details',
-        templateUrl: 'templates/details.html',
+        templateUrl: 'templates/detailsPhone.html',
         controller: 'DetailsCtrl'
       }).state('home.details', {
         url: '/details',
@@ -28,7 +28,7 @@
         },
         views: {
           sub: {
-            templateUrl: 'templates/details.html',
+            templateUrl: 'templates/detailsDesk.html',
             controller: 'DetailsCtrl'
           }
         }
@@ -47,8 +47,11 @@
 
 (function() {
   angular.module('app.controllers').controller('DetailsCtrl', [
-    '$scope', '$stateParams', '$http', '$location', function($scope, $stateParams, $http, $location) {
+    '$scope', '$stateParams', '$http', '$location', '$state', function($scope, $stateParams, $http, $location, $state) {
       var baseUrl;
+      if (!$stateParams.code) {
+        $state.go("home");
+      }
       baseUrl = ($location.protocol()) + "://" + ($location.host()) + ":" + ($location.port()) + "/";
       NProgress.start();
       return $http.get("http://www.omdbapi.com", {
