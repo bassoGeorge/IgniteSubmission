@@ -47,7 +47,9 @@
 
 (function() {
   angular.module('app.controllers').controller('DetailsCtrl', [
-    '$scope', '$stateParams', '$http', function($scope, $stateParams, $http) {
+    '$scope', '$stateParams', '$http', '$location', function($scope, $stateParams, $http, $location) {
+      var baseUrl;
+      baseUrl = ($location.protocol()) + "://" + ($location.host()) + ":" + ($location.port()) + "/";
       NProgress.start();
       return $http.get("http://www.omdbapi.com", {
         params: {
@@ -55,7 +57,15 @@
         }
       }).success(function(data) {
         $scope.data = data;
-        return NProgress.done();
+        NProgress.done();
+        return $http.post(baseUrl + "setimage", {
+          imdbID: data.imdbID,
+          Poster: data.Poster
+        }).success(function(d) {
+          if (d.success) {
+            return $scope.data.imageUrl = baseUrl + d.imageUrl;
+          }
+        });
       });
     }
   ]);

@@ -12,13 +12,20 @@ var imageArray = fs.readdirSync("images/posters");
 
 app.post('/setimage', function (req, res) {
   var id = req.body['imdbID'] + ".jpg";
+  var imageUrl = "images/posters/"+id
+  var result = {
+    success: true,
+    new: true,
+    imageUrl: imageUrl
+  };
   if (imageArray.indexOf(id) == -1) {
     request(req.body['Poster']).pipe(fs.createWriteStream("images/posters/" + id)).on('close', function () {
       imageArray.push(id);
-      res.json({success: true, new: true})
+      res.json(result)
     });
   } else {
-    res.json({success: true, new: false})
+    result['new'] = false;
+    res.json(result)
   }
 });
 

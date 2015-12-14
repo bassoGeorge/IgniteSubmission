@@ -5,6 +5,7 @@ section.grid-content
       h2 {{ data.Title }}
       span.movie-type.label(ng-class='data.Type == "movie"? "success" : "warning"') {{ data.Type }}
       h4(ng-if='data.Released != "N/A"') {{ data.Released }}
+      img(ng-src='{{data.imageUrl}}' alt='Movie Poster')
     div(ng-if='data.Plot != "N/A"')
       .card-divider Plot
       .card-section
