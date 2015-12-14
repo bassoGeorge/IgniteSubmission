@@ -17,10 +17,10 @@ html(ng-app='app')
           a(ui-sref='home') Back
 
       // Main view, split into two to keep one sticky
-      main.grid-block(id='main' ui-view='home' ng-show="checkState('home')")
+      main.grid-block.full-screen(id='main' ui-view='home' ng-show="checkState('home')")
 
         // This one is only shown in mobile views
-      ui-view(ng-show="checkState('details')")
+      ui-view.full-screen.grid-block(ng-show="checkState('details')")
 
 
       // Footer

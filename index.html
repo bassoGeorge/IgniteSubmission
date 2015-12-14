@@ -14,10 +14,10 @@
         <div class="center title">IMDB Web app</div><span ng-show="showBackButton()" class="left"><a ui-sref="home">Back</a></span>
       </nav>
       <!-- Main view, split into two to keep one sticky-->
-      <main id="main" ui-view="home" ng-show="checkState('home')" class="grid-block">
+      <main id="main" ui-view="home" ng-show="checkState('home')" class="grid-block full-screen">
         <!-- This one is only shown in mobile views-->
       </main>
-      <ui-view ng-show="checkState('details')"></ui-view>
+      <ui-view ng-show="checkState('details')" class="full-screen grid-block"></ui-view>
       <!-- Footer-->
       <footer class="grid-block shrink">
         <div class="grid-content">
