@@ -1,5 +1,6 @@
 node_modules
 bower_components
-images/posters
+images/posters/*
 .sass-cache
 .idea
+temp
