@@ -14,7 +14,7 @@
       li(ng-repeat='movie in results')
         // The actual details view is determined based on current screen width
         a(ng-click='goToDetails(movie.imdbID)')
-          small {{ movie.Year }}
+          small {{ movie.Type }}, {{ movie.Year }}
           p {{ movie.Title }}
       header(ng-show='error') No results
 

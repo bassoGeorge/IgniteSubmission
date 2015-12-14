@@ -11,7 +11,7 @@
     <section class="block-list">
       <header ng-show="results.length">Results</header>
       <li ng-repeat="movie in results">
-        <!-- The actual details view is determined based on current screen width--><a ng-click="goToDetails(movie.imdbID)"><small>{{ movie.Year }}</small>
+        <!-- The actual details view is determined based on current screen width--><a ng-click="goToDetails(movie.imdbID)"><small>{{ movie.Type }}, {{ movie.Year }}</small>
           <p>{{ movie.Title }}</p></a>
       </li>
       <header ng-show="error">No results</header>
